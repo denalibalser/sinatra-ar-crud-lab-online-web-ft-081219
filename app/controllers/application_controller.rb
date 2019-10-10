@@ -54,8 +54,7 @@ class ApplicationController < Sinatra::Base
      article = Article.find_by(params[:id])
      article.title = params[:title]
      article.content = params[:content]
-     book.category = params[:category]
-     book.save
+     article.save
      redirect to "/info/#{ params[:isbn] }"
    end
 
