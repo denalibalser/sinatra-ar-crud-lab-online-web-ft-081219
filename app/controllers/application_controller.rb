@@ -51,7 +51,7 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/articles/:id' do
-     book = Book.find_by(params[:id])
+     article = Article.find_by(params[:id])
      book.title = params[:title]
      book.page_count = params[:number_pages]
      book.category = params[:category]
