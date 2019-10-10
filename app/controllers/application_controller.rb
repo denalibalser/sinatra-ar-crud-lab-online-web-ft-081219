@@ -46,9 +46,18 @@ class ApplicationController < Sinatra::Base
   get '/articles/:id/edit' do
     @article = Article.find_by(params[:id])
 
-  
+
     erb :edit
   end
+
+  patch '/articles/:id' do
+     book = Book.find_by(params[:id])
+     book.title = params[:title]
+     book.page_count = params[:number_pages]
+     book.category = params[:category]
+     book.save
+     redirect to "/info/#{ params[:isbn] }"
+   end
 
 
   delete '/article/:id' do
