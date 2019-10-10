@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base
      article.title = params[:title]
      article.content = params[:content]
      article.save
-     redirect to "/info/#{ params[:isbn] }"
+     redirect to "/articles/#{ params[:id] }"
    end
 
 
