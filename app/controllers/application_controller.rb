@@ -52,8 +52,8 @@ class ApplicationController < Sinatra::Base
 
   patch '/articles/:id' do
      article = Article.find_by(params[:id])
-     book.title = params[:title]
-     book.page_count = params[:number_pages]
+     article.title = params[:title]
+     article.content = params[:content]
      book.category = params[:category]
      book.save
      redirect to "/info/#{ params[:isbn] }"
